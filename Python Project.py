@@ -42,6 +42,10 @@ print(quantity[2])
 grouped_pc = cars.groupby(["Make"]).mean()
 print(grouped_pc)
 
+#Drop duplicates
+Duplicates=cars.drop_duplicates(subset=["Month"])
+print(Duplicates)
+
 
 
 
