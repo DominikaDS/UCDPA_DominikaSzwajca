@@ -46,8 +46,23 @@ print(grouped_pc)
 Duplicates=cars.drop_duplicates(subset=["Month"])
 print(Duplicates)
 
+#Looping
+IrlTopBrand=["Toyota", "Volkswagen", "Hyundai"]
+for p in IrlTopBrand:
+    print(p)
 
+#Iterrows
+# Define a dictionary containing students data
+data = {"Make": ["Toyota", "Volkswagen", "Peugeot", "Ford"],
+                "Quantity":[2884, 2521, 1029, 870],
+                "Pct":[22.7, 19.9, 8.1, 6.9],
+                "Month":[1,1,1,1]}
+df=pd.DataFrame(data, columns = ["Make","Quantity","Pct","Month"])
+print("Top brand data:\n", df)
+print("\nIterating over rows using loc function :\n")
 
-
-
+# iterate through each row and select
+# "Make" and "Quantity" column respectively
+for i in range(len(df)) :
+  print(df.loc[i, "Make"], df.loc[i, "Quantity"])
 
