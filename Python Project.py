@@ -66,3 +66,27 @@ print("\nIterating over rows using loc function :\n")
 for i in range(len(df)) :
   print(df.loc[i, "Make"], df.loc[i, "Quantity"])
 
+
+##Import a CSV file into a Pandas DataFrame
+import pandas as pd
+
+month=pd.read_csv("norway_new_car_sales_by_month.csv")
+
+
+#NumPy
+import numpy as np
+pivot=cars.pivot_table(values="Quantity", index="Make",columns="Month",aggfunc=np.sum, margins=True, fill_value=0)
+print(pivot)
+
+#Dictionary or Lists
+##List
+
+PCs_list=["108","208","308","508","2008","3008","5008","Traveller"]
+print(PCs_list[1:])
+
+
+##Dictionary
+
+DS_regsYTD = {"DS3" : 7, "DS7" : 16, "NRDS" :5, "GODS" : 18}
+DS_dealer=DS_regsYTD.get("NAVAN")
+print(DS_dealer)
