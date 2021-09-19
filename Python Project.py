@@ -121,6 +121,19 @@ print(view1)
 ##result = pd.merge(view, view1["Import"],on="Year")
 ##print(result)
 
+
+# Define a custom function to create reusable code
+Short_VIN="XY123456"
+Long_VIN="V12345678"
+print("String 1:",Short_VIN)
+print ("String 2:",Long_VIN)
+Full_VIN=Long_VIN+Short_VIN
+print("Concatenated chassis number:",Full_VIN)
+
+
+
+# use of user defined functions
+
 #Dictionary or Lists
 ##List
 
