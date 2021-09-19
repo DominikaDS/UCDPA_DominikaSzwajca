@@ -71,12 +71,55 @@ for i in range(len(df)) :
 import pandas as pd
 
 month=pd.read_csv("norway_new_car_sales_by_month.csv")
+print(month.info())
+
+#NumPy
+import numpy as np
+pivot=month.pivot_table(values="Quantity", index="Year",columns="Month",aggfunc=np.sum, margins=True, fill_value=0)
+print(pivot)
 
 
 #NumPy
 import numpy as np
-pivot=cars.pivot_table(values="Quantity", index="Make",columns="Month",aggfunc=np.sum, margins=True, fill_value=0)
-print(pivot)
+pivot1=cars.pivot_table(values="Quantity", index="Make",columns="Month",aggfunc=np.sum, margins=True, fill_value=0)
+print(pivot1)
+
+pivot2=cars.pivot_table(values="Quantity", index="Year",columns="Month",aggfunc=np.sum, margins=True, fill_value=0)
+print(pivot2)
+
+
+print(cars.head())
+
+print(month.head())
+
+print(pivot.head())
+
+print(pivot1.head())
+
+print(pivot2.head())
+
+
+
+#Merge Data Frames
+
+view=cars.agg({"Year": "count","Month": "count","Make": "count","Quantity": "mean"})
+print(view)
+
+view1=month.agg({"Year": "count","Month": "count","Import": "mean","Quantity": "mean"})
+print(view1)
+
+
+# merge both series
+##df = pd.merge(a, b, "right_index"==True, "left_index"==True)
+
+# show the dataframe
+##print(df)
+
+
+
+
+##result = pd.merge(view, view1["Import"],on="Year")
+##print(result)
 
 #Dictionary or Lists
 ##List
@@ -90,3 +133,11 @@ print(PCs_list[1:])
 DS_regsYTD = {"DS3" : 7, "DS7" : 16, "NRDS" :5, "GODS" : 18}
 DS_dealer=DS_regsYTD.get("NAVAN")
 print(DS_dealer)
+
+
+##Matplotlib
+import matplotlib.pyplot as plt
+fig, ax = plt.subplots()
+ax.plot(month["Year"], month["Quantity"], marker="v", linestyle="None")
+plt.show()
+
