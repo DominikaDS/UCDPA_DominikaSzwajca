@@ -150,11 +150,11 @@ DS_dealer=DS_regsYTD.get("NAVAN")
 print(DS_dealer)
 
 
-#5AMatplotlib
+#5A Matplotlib
 
 #Chart1
 
-Matplot=pd.read_csv("dunya.csv")
+Matplot=pd.read_csv("Matplotdataset.csv")
 print(Matplot.head())
 
 import matplotlib.pyplot as plt
@@ -170,6 +170,3 @@ import seaborn as sns
 sns.set_theme(style="whitegrid")
 ax = sns.barplot(x="Continent", y="Revenue", data=Matplot, palette="Blues_d")
 plt.show()
-
-
-
