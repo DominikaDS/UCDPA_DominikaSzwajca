@@ -1,6 +1,6 @@
 #Importing data
 
-##Retrieve data from online APIs
+##2ARetrieve data from online APIs
 import request
 import requests
 
@@ -21,12 +21,13 @@ mydata = r.json()
 
 print(mydata)
 
-##Import a CSV file into a Pandas DataFrame
+##2BImport a CSV file into a Pandas DataFrame
 import pandas as pd
 
 cars=pd.read_csv("norway_new_car_sales_by_make.csv")
 print(cars.head())
 
+#3A
 #List methods - sorting brands in ascending order
 make=["Toyota", "Volkswagen", "Peugeot", "Ford", "Volvo"]
 make.sort()
@@ -42,17 +43,18 @@ print(quantity[2])
 grouped_pc = cars.groupby(["Make"]).mean()
 print(grouped_pc)
 
-#Drop duplicates
+#3B Drop duplicates
 Duplicates=cars.drop_duplicates(subset=["Month"])
 print(Duplicates)
 
+#3C
 #Looping
 IrlTopBrand=["Toyota", "Volkswagen", "Hyundai"]
 for p in IrlTopBrand:
     print(p)
 
 #Iterrows
-# Define a dictionary containing students data
+# Define a dictionary containing Top Brands data
 data = {"Make": ["Toyota", "Volkswagen", "Peugeot", "Ford"],
                 "Quantity":[2884, 2521, 1029, 870],
                 "Pct":[22.7, 19.9, 8.1, 6.9],
@@ -73,11 +75,11 @@ import pandas as pd
 month=pd.read_csv("norway_new_car_sales_by_month.csv")
 print(month.info())
 
+##4B
 #NumPy
 import numpy as np
 pivot=month.pivot_table(values="Quantity", index="Year",columns="Month",aggfunc=np.sum, margins=True, fill_value=0)
 print(pivot)
-
 
 #NumPy
 import numpy as np
@@ -100,7 +102,7 @@ print(pivot2.head())
 
 
 
-#Merge Data Frames
+#3D Merge Data Frames
 
 view=cars.agg({"Year": "count","Month": "count","Make": "count","Quantity": "mean"})
 print(view)
@@ -122,7 +124,7 @@ print(view1)
 ##print(result)
 
 
-# Define a custom function to create reusable code
+#4A Define a custom function to create reusable code
 Short_VIN="XY123456"
 Long_VIN="V12345678"
 print("String 1:",Short_VIN)
@@ -134,7 +136,7 @@ print("Concatenated chassis number:",Full_VIN)
 
 # use of user defined functions
 
-#Dictionary or Lists
+#4C Dictionary or Lists
 ##List
 
 PCs_list=["108","208","308","508","2008","3008","5008","Traveller"]
@@ -148,7 +150,7 @@ DS_dealer=DS_regsYTD.get("NAVAN")
 print(DS_dealer)
 
 
-##Matplotlib
+#5AMatplotlib
 
 #Chart1
 
