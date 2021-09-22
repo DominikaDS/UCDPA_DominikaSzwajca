@@ -149,8 +149,25 @@ print(DS_dealer)
 
 
 ##Matplotlib
+
+#Chart1
+
+Matplot=pd.read_csv("Matplotdataset.csv")
+print(Matplot.head())
+
 import matplotlib.pyplot as plt
 fig, ax = plt.subplots()
-ax.plot(month["Year"], month["Quantity"], marker="v", linestyle="None")
+ax.bar(Matplot["Country"], Matplot["Revenue"])
+ax.set_xticklabels(Matplot["Country"], rotation=90)
+ax.set_ylabel("Revenue")
 plt.show()
+
+
+#Chart 2
+import seaborn as sns
+sns.set_theme(style="whitegrid")
+ax = sns.barplot(x="Continent", y="Revenue", data=Matplot, palette="Blues_d")
+plt.show()
+
+
 
